@@ -6,21 +6,21 @@ const pillars = [
         icon: Settings,
         title: "Ingeniería aplicada al negocio.",
         description:
-            "Consultoría técnica que ordena y prioriza mejoras antes de escribir código.",
+            "Ordenamos procesos, información y operación para poder escalar con criterio. Priorizamos la claridad antes que el código.",
     },
     {
         id: "02",
         icon: Terminal,
         title: "Desarrollo moderno y eficiente.",
         description:
-            "Stack moderno (Node, React, Supabase, n8n). Buenas prácticas para productos escalables y mantenibles.",
+            "Modernizamos la operación sin perder contexto. Diseñamos sistemas que funcionan en producción, alineados al negocio.",
     },
     {
         id: "03",
         icon: Eye,
-        title: "Contenido y Comunicación.",
+        title: "Contenido, comunicación y transferencia.",
         description:
-            "Narrativa y presencia digital. Mostramos, explicamos y educamos con contenido propio.",
+            "No solo entregamos software, transferimos conocimiento. Narrativa técnica y documentación clara para profesionales.",
     },
 ];
 

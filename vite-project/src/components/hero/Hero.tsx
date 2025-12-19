@@ -20,7 +20,7 @@ export const Hero = () => {
                         style={{ animationDelay: "0.1s" }}
                     >
                         <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                            Software Engineering Agency
+                            Ingeniería de Sistemas
                         </span>
                     </div>
 
@@ -29,11 +29,9 @@ export const Hero = () => {
                         className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 opacity-0 animate-slide-up"
                         style={{ animationDelay: "0.2s" }}
                     >
-                        Ingeniería aplicada.
+                        Comprendemos sistemas complejos.
                         <br />
-                        <span className="text-muted-foreground">Visión de producto.</span>
-                        <br />
-                        Creatividad estratégica.
+                        <span className="text-muted-foreground">Diseñamos soluciones claras.</span>
                     </h1>
 
                     {/* Subheadline */}
@@ -41,8 +39,8 @@ export const Hero = () => {
                         className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance opacity-0 animate-fade-in"
                         style={{ animationDelay: "0.4s" }}
                     >
-                        SupraSense es tu socio técnico. Analizamos procesos, diseñamos sistemas
-                        inteligentes y creamos soluciones escalables.
+                        Compañía de ingeniería orientada a comprender, modelar y clarificar
+                        operaciones reales. Ordenamos procesos e información para escalar con criterio.
                     </p>
 
                     {/* CTA */}
@@ -51,7 +49,7 @@ export const Hero = () => {
                         style={{ animationDelay: "0.6s" }}
                     >
                         <Button variant="hero" size="lg" className="group">
-                            Hablemos de tu proyecto
+                            Hablemos
                             <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
                         </Button>
                     </div>

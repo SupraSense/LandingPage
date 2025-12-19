@@ -11,7 +11,7 @@ export const Approach = () => {
                                 01 — Enfoque
                             </span>
                             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                                No solo hacemos software.
+                                No vendemos software como fin.
                             </h2>
                         </div>
                     </div>
@@ -19,9 +19,8 @@ export const Approach = () => {
                     {/* Right Column */}
                     <div className="p-8 md:p-16 lg:p-20 flex items-center">
                         <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
-                            Ayudamos al cliente a entender sus procesos, encontrar cuellos de
-                            botella y tomar decisiones informadas. Traducimos necesidades
-                            reales en soluciones concretas.
+                            Diseñamos sistemas que funcionan en producción, alineados al negocio y a las personas que los usan.
+                            Transformamos la complejidad en soluciones claras, ejecutables y sostenibles.
                         </p>
                     </div>
                 </div>

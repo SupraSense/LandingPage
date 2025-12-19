@@ -9,7 +9,9 @@ export const Navbar = () => {
     const navLinks = [
         { label: "Servicios", href: "#servicios" },
         { label: "Enfoque", href: "#enfoque" },
-        { label: "Proyectos", href: "#proyectos" },
+        { label: "Método", href: "#metodo" },
+        { label: "Comunidad", href: "#comunidad" },
+        { label: "Nosotros", href: "#nosotros" },
     ];
 
     return (
@@ -35,7 +37,7 @@ export const Navbar = () => {
                             </a>
                         ))}
                         <Button variant="hero" size="default">
-                            Agendar Diagnóstico
+                            Agendar diagnóstico
                         </Button>
                     </div>
 
@@ -64,7 +66,7 @@ export const Navbar = () => {
                                 </a>
                             ))}
                             <Button variant="hero" size="default" className="mt-2">
-                                Agendar Diagnóstico
+                                Agendar diagnóstico
                             </Button>
                         </div>
                     </div>

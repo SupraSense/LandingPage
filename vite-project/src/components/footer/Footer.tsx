@@ -2,8 +2,8 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 const socialLinks = [
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/suprasense/about/" },
+    { label: "Instagram", href: "https://www.instagram.com/suprasense_/?hl=es-la" },
     { label: "Email", href: "mailto:hola@suprasense.com" },
 ];
 
@@ -14,14 +14,14 @@ export const Footer = () => {
             <div className="container px-4 mx-auto">
                 <div className="py-16 md:py-24 lg:py-32 text-center">
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-8">
-                        ¿Listo para escalar?
+                        ¿Listo para empezar?
                     </h2>
                     <Button
                         variant="outline"
                         size="lg"
                         className="bg-transparent border-background text-background hover:bg-background hover:text-foreground"
                     >
-                        Agendar visita
+                        Agendar una llamada
                         <ArrowUpRight className="ml-2 w-5 h-5" />
                     </Button>
                 </div>
@@ -42,6 +42,8 @@ export const Footer = () => {
                                 <a
                                     key={link.label}
                                     href={link.href}
+                                    target={link.label !== "Email" ? "_blank" : undefined}
+                                    rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
                                     className="font-mono text-sm text-background/60 hover:text-background transition-colors"
                                 >
                                     {link.label}

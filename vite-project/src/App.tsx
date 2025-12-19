@@ -2,6 +2,9 @@ import { Navbar } from './components/navbar/Navbar';
 import { Hero } from './components/hero/Hero';
 import { Approach } from './components/approach/Approach';
 import { Pillars } from './components/pillars/Pillars';
+import { Method } from './components/method/Method';
+import { Community } from './components/community/Community';
+import { About } from './components/about/About';
 import { Footer } from './components/footer/Footer';
 
 function App() {
@@ -18,6 +21,15 @@ function App() {
 
       {/* Pillars Section */}
       <Pillars />
+
+      {/* Method Section */}
+      <Method />
+
+      {/* Community Section */}
+      <Community />
+
+      {/* About Section */}
+      <About />
 
       {/* Footer */}
       <Footer />
