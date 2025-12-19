@@ -2,38 +2,39 @@
 # Etapa de build
 # =========================
 FROM node:20-alpine AS builder
+
 WORKDIR /app
 
-ENV NODE_ENV=development
+# Copiamos archivos de dependencias
+COPY package.json package-lock.json* ./
 
-# Copiamos archivos de configuración y dependencias
-COPY package.json package-lock.json* tsconfig*.json ./
-
-# Instalamos TODAS las dependencias para poder construir
+# Instalamos dependencias (usando npm ci para entornos limpios)
 RUN npm ci
 
-# Copiamos el código fuente
+# Copiamos el resto del código
 COPY . .
 
-# Compilamos la aplicación (genera carpeta dist)
+# Construimos la aplicación (genera la carpeta dist)
 RUN npm run build
 
 # =========================
 # Etapa de runtime
 # =========================
 FROM node:20-alpine AS runtime
+
 WORKDIR /app
 
-ENV NODE_ENV=production
-
-# Instalamos 'serve' para servir el contenido estático
-# Es mucho más liviano que mantener todas las dependencias de node
+# Instalamos 'serve' globalmente para servir archivos estáticos
 RUN npm install -g serve
 
-# Copiamos solo los archivos compilados del builder
+# Copiamos solo la carpeta 'dist' generada en la etapa anterior
 COPY --from=builder /app/dist ./dist
 
+# Exponemos el puerto 3000
 EXPOSE 3000
 
-# Iniciamos el servidor en el puerto 3000
-CMD ["serve", "-s", "dist", "-l", "3000"]
+# Ejecutamos serve escuchando en el puerto 3000
+# -s: Single Page Application (para que las rutas funcionen al recargar)
+# -l: Puerto
+# --no-clipboard: Evita errores al intentar copiar al portapapeles en servidor
+CMD ["serve", "-s", "dist", "-l", "3000", "--no-clipboard"]

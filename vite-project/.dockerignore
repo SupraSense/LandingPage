@@ -3,3 +3,7 @@ dist
 .git
 .env
 .DS_Store
+coverage
+.vscode
+Dockerfile
+.dockerignore
