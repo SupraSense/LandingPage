@@ -2,9 +2,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "lucide-react";
 
 const socialLinks = [
-    { label: "LinkedIn", href: "#" },
-    { label: "Instagram", href: "#" },
-    { label: "Email", href: "mailto:hola@suprasense.com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/suprasense/about/" },
+    { label: "Instagram", href: "https://www.instagram.com/suprasense_/?hl=es-la" },
+    { label: "Email", href: "mailto:suprasense111@gmail.com" },
 ];
 
 export const Footer = () => {
@@ -42,6 +42,8 @@ export const Footer = () => {
                                 <a
                                     key={link.label}
                                     href={link.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="font-mono text-sm text-background/60 hover:text-background transition-colors"
                                 >
                                     {link.label}
