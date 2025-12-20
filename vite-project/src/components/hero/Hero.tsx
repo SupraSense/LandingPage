@@ -1,59 +1,77 @@
+import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { motion } from "framer-motion";
 
 export const Hero = () => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const spotlightRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const updateMousePosition = (ev: MouseEvent) => {
+            if (!containerRef.current || !spotlightRef.current) return;
+            const rect = containerRef.current.getBoundingClientRect();
+            const x = ev.clientX - rect.left;
+            const y = ev.clientY - rect.top;
+
+            spotlightRef.current.style.background = `radial-gradient(600px circle at ${x}px ${y}px, rgba(124, 58, 237, 0.15), transparent 40%)`;
+        };
+
+        const container = containerRef.current;
+        if (container) {
+            container.addEventListener("mousemove", updateMousePosition);
+        }
+
+        return () => {
+            if (container) {
+                container.removeEventListener("mousemove", updateMousePosition);
+            }
+        };
+    }, []);
+
     return (
-        <section className="relative min-h-screen flex items-center pt-20 md:pt-0 overflow-hidden">
-            {/* Grid Pattern Background */}
-            <div className="absolute inset-0 grid-pattern opacity-50" />
-            <div className="absolute inset-0 geometric-pattern" />
+        <section
+            ref={containerRef}
+            className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background pt-20"
+        >
+            {/* Spotlight Effect (Behind Grid) - Optimized with direct DOM manipulation */}
+            <div
+                ref={spotlightRef}
+                className="pointer-events-none absolute inset-0 transition-opacity duration-300"
+                style={{
+                    background: `radial-gradient(600px circle at 50% 50%, rgba(124, 58, 237, 0.15), transparent 40%)`, // Default fallback
+                }}
+            />
 
-            {/* Decorative Elements */}
-            <div className="absolute top-1/4 right-0 w-1/3 h-px bg-gradient-to-l from-transparent via-border to-transparent" />
-            <div className="absolute bottom-1/4 left-0 w-1/3 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+            {/* Grid Pattern */}
+            <div
+                className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"
+            />
 
-            <div className="container relative z-10 px-4 mx-auto">
-                <div className="max-w-4xl mx-auto text-center">
-                    {/* Label */}
-                    <div
-                        className="inline-flex items-center gap-2 mb-8 opacity-0 animate-fade-in"
-                        style={{ animationDelay: "0.1s" }}
-                    >
-                        <span className="font-mono text-xs uppercase tracking-widest text-muted-foreground">
-                            Ingeniería de Sistemas
-                        </span>
-                    </div>
+            {/* Content */}
+            <div className="relative z-10 container px-4 mx-auto text-center">
+                <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-black mb-8 leading-[1.1]">
+                    Análisis Profundo.
+                    <br />
+                    <span className="text-brand-grey">Software con Criterio.</span>
+                    <br />
+                    Ejecución Técnica.
+                </h1>
 
-                    {/* Main Headline */}
-                    <h1
-                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6 opacity-0 animate-slide-up"
-                        style={{ animationDelay: "0.2s" }}
-                    >
-                        Comprendemos sistemas complejos.
-                        <br />
-                        <span className="text-muted-foreground">Diseñamos soluciones claras.</span>
-                    </h1>
+                <p className="text-xl text-gray-600 max-w-[600px] mx-auto mb-12 leading-relaxed text-balance">
+                    Llevamos tu negocio al siguiente nivel mediante reingeniería de tus procesos con software y desarrollo estratégico.
+                </p>
 
-                    {/* Subheadline */}
-                    <p
-                        className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 text-balance opacity-0 animate-fade-in"
-                        style={{ animationDelay: "0.4s" }}
-                    >
-                        Compañía de ingeniería orientada a comprender, modelar y clarificar
-                        operaciones reales. Ordenamos procesos e información para escalar con criterio.
-                    </p>
-
-                    {/* CTA */}
-                    <div
-                        className="opacity-0 animate-fade-in"
-                        style={{ animationDelay: "0.6s" }}
-                    >
-                        <Button variant="hero" size="lg" className="group">
-                            Hablemos
-                            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-                        </Button>
-                    </div>
-                </div>
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+                >
+                    <Button variant="cta" size="xl" className="group text-lg">
+                        Agendar Diagnóstico
+                        <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    </Button>
+                </motion.div>
             </div>
 
             {/* Bottom Border */}

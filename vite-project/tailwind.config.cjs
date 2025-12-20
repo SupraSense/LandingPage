@@ -15,6 +15,7 @@ module.exports = {
           grey: "#6B7280", // Using a balanced grey for "Visión de producto"
           dark: "#111111", // For buttons if not pure black
         },
+        violet: "hsl(var(--violet) / <alpha-value>)",
       },
       backgroundImage: {
         'grid-pattern': "linear-gradient(to right, #f3f4f6 1px, transparent 1px), linear-gradient(to bottom, #f3f4f6 1px, transparent 1px)",

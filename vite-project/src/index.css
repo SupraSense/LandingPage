@@ -1,6 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 @config "../tailwind.config.cjs";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @theme {
   --font-sans: 'Inter', sans-serif;
@@ -115,6 +115,9 @@
 
   --radius: 0rem;
   /* Minimalist: square or very small radius */
+
+  --violet: 262.1 83.3% 57.8%;
+  --violet-glow: 262.1 83.3% 57.8%;
 }
 
 .dark {
@@ -145,9 +148,16 @@
   --border: 0 0% 14.9%;
   --input: 0 0% 14.9%;
   --ring: 0 0% 83.1%;
+
+  --violet: 262.1 83.3% 57.8%;
+  --violet-glow: 262.1 83.3% 57.8%;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     -webkit-font-smoothing: antialiased;
