@@ -7,9 +7,11 @@ export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const navLinks = [
-        { label: "Servicios", href: "#servicios" },
         { label: "Enfoque", href: "#enfoque" },
-        { label: "Proyectos", href: "#proyectos" },
+        { label: "Servicios", href: "#servicios" },
+        { label: "Método", href: "#metodo" },
+        { label: "Red", href: "#red" },
+        { label: "Nosotros", href: "#nosotros" },
     ];
 
     return (
@@ -17,7 +19,8 @@ export const Navbar = () => {
             <div className="container mx-auto px-4">
                 <div className="flex items-center justify-between h-16 md:h-20">
                     {/* Logo */}
-                    <a href="/" className="flex items-center">
+                    <a href="/" className="flex items-center gap-2">
+                        <img src="/black_logo.svg" alt="Logo" className="h-8 w-auto" />
                         <span className="text-xl md:text-2xl font-bold tracking-tight">
                             SupraSense
                         </span>
@@ -34,8 +37,8 @@ export const Navbar = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <Button variant="hero" size="default">
-                            Agendar Diagnóstico
+                        <Button variant="cta" size="default">
+                            Agendar diagnóstico
                         </Button>
                     </div>
 
@@ -63,8 +66,8 @@ export const Navbar = () => {
                                     {link.label}
                                 </a>
                             ))}
-                            <Button variant="hero" size="default" className="mt-2">
-                                Agendar Diagnóstico
+                            <Button variant="cta" size="default" className="mt-2">
+                                Agendar diagnóstico
                             </Button>
                         </div>
                     </div>
