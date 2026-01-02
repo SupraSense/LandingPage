@@ -27,6 +27,7 @@ export const Footer = () => {
                         variant="outline"
                         size="lg"
                         className="bg-transparent border-background text-background hover:bg-background hover:text-foreground"
+                        onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}
                     >
                         Agendar un diagnóstico
                         <ArrowUpRight className="ml-2 w-5 h-5" />

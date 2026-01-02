@@ -37,7 +37,7 @@ export const Navbar = () => {
                                 {link.label}
                             </a>
                         ))}
-                        <Button variant="cta" size="default">
+                        <Button variant="cta" size="default" onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}>
                             Agendar diagnóstico
                         </Button>
                     </div>
@@ -66,7 +66,10 @@ export const Navbar = () => {
                                     {link.label}
                                 </a>
                             ))}
-                            <Button variant="cta" size="default" className="mt-2">
+                            <Button variant="cta" size="default" className="mt-2" onClick={() => {
+                                setIsOpen(false);
+                                document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' });
+                            }}>
                                 Agendar diagnóstico
                             </Button>
                         </div>

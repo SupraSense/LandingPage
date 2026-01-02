@@ -67,7 +67,12 @@ export const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
                 >
-                    <Button variant="cta" size="xl" className="group text-lg">
+                    <Button
+                        variant="cta"
+                        size="xl"
+                        className="group text-lg"
+                        onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
                         Agendar Diagnóstico
                         <ArrowUpRight className="ml-2 w-5 h-5 transition-transform group-hover:-translate-y-1 group-hover:translate-x-1" />
                     </Button>

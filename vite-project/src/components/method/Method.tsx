@@ -151,7 +151,11 @@ export const Method = () => {
                     transition={{ duration: 0.6 }}
                     className="mt-16 lg:mt-24 text-center"
                 >
-                    <Button variant="cta" size="xl">
+                    <Button
+                        variant="cta"
+                        size="xl"
+                        onClick={() => document.getElementById('diagnostico')?.scrollIntoView({ behavior: 'smooth' })}
+                    >
                         Agendar Diagnóstico Inicial
                         <ArrowUpRight className="w-5 h-5 ml-2" />
                     </Button>

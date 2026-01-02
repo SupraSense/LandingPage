@@ -6,6 +6,7 @@ import { Method } from '@/components/method/Method';
 import { Community } from '@/components/community/Community';
 import { About } from '@/components/about/About';
 import { Footer } from '@/components/footer/Footer';
+import { DiagnosticSection } from '@/components/diagnostic/DiagnosticSection';
 
 const Home = () => {
     return (
@@ -30,6 +31,9 @@ const Home = () => {
 
             {/* About Section */}
             <About />
+
+            {/* Diagnostic Section */}
+            <DiagnosticSection />
 
             {/* Footer */}
             <Footer />
